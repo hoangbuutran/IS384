@@ -1,0 +1,91 @@
+﻿@model Model.EF.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SANPHAM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSANPHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSANPHAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINHANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINHANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAUSAC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAUSAC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.XUATXU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XUATXU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MIEUTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MIEUTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANGTHAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANGTHAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDLOAISANPHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDLOAISANPHAM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDSANPHAM }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

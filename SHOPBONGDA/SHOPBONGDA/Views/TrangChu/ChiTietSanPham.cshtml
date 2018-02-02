@@ -1,0 +1,46 @@
+﻿@model Model.EF.SANPHAM
+
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" single_top">
+    <div class="single_grid">
+        <div class="grid images_3_of_2">
+            <ul id="etalage">
+                <li>
+                    <a href="optionallink.html">
+                        <img class="etalage_thumb_image" src="~/Assets/Client/images/s4.jpg" class="img-responsive" />
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="desc1 span_3_of_2">
+
+
+            <h4>@Model.TENSANPHAM</h4>
+            <div class="cart-b">
+                <div class="left-n ">@Model.GIA</div>
+                <a class="now-get get-cart-in" href="#">ADD TO CART</a>
+                <div class="clearfix"></div>
+            </div>
+            <h6>Màu sắc: @Model.MAUSAC</h6>
+            <h6>Màu sắc: @Model.XUATXU</h6>
+            <div class="share">
+                <h5>Chia sẻ sản phẩm:</h5>
+                <ul class="share_nav">
+                    <li><a href="#"><img src="~/Assets/Client/images/facebook.png" title="facebook"></a></li>
+                    <li><a href="#"><img src="~/Assets/Client/images/gpluse.png" title="Google+"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+    <div class="toogle">
+        <h3 class="m_3">Chi Tiết Sản Phẩm</h3>
+        <p class="m_text">@Model.MIEUTA</p>
+    </div>
+</div>

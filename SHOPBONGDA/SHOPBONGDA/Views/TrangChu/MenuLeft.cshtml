@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Model.EF.LOAISANPHAM>
+@{
+    Layout = null;
+}
+<div class="sub-cate pull-left">
+    <div class=" top-nav rsidebar span_1_of_left">
+        <h3 class="cate">LOẠI SẢN PHẨM</h3>
+        <ul class="menu">
+            <li class="item1">
+                <ul class="cute">
+                    @foreach (var item in Model)
+                    {
+                        <li class="subitem1"><a href="#">@item.TENLOAISANPHAM</a></li>
+                    }
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
