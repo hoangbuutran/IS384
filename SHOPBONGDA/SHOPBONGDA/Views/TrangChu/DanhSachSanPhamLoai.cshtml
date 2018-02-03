@@ -3,80 +3,35 @@
 @{
     ViewBag.Title = "DanhSachSanPhamLoai";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var i = @Model.Where(x => x.IDSANPHAM == 2).SingleOrDefault();
 }
 
-<h2>DanhSachSanPhamLoai</h2>
+<div class="women-product">
+    <div class=" w_content">
+        <div class="women">
+            <h4><strong>Sản Phẩm Loại: </strong><span>@i.LOAISANPHAM.TENLOAISANPHAM</span> </h4>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TENSANPHAM)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GIA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HINHANH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NGAY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MAUSAC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.XUATXU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MIEUTA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TRANGTHAI)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IDLOAISANPHAM)
-        </th>
-        <th></th>
-    </tr>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENSANPHAM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HINHANH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAUSAC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.XUATXU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MIEUTA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TRANGTHAI)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDLOAISANPHAM)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDSANPHAM }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDSANPHAM }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDSANPHAM })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <div class="  product-grid">
+            <div class="content_box">
+                <a href="#">
+                    <div class="left-grid-view grid-view-left">
+                        <img src="@Url.Content(@item.HINHANH)" class="img-responsive watch-right" alt="" />
+                        <div class="mask">
+                            <div class="info"> Quick View </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <h4><a href="#">@item.TENSANPHAM</a></h4>
+            <p>@item.GIA</p>
+            Rs. 499
+        </div>
+    }
 
-</table>
+</div>

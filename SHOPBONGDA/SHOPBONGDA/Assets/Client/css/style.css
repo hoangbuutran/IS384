@@ -15,6 +15,9 @@ body a{
 	-ms-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 }
+div#formlogin {
+    margin-left: 140px;
+}
 .top-header{
 	background: #F97E76;
 	padding: 0.7em 0;

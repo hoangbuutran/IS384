@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\LoaiSanPhamDao.cs" />
+    <Compile Include="DAO\NguoiDungDao.cs" />
     <Compile Include="DAO\SanPhamDao.cs" />
     <Compile Include="EF\CTHOADON.cs" />
     <Compile Include="EF\HOADON.cs" />

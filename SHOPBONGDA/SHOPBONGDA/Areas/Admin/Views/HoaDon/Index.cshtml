@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Model.EF.HOADON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYLAPHOADON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANGTHAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNGUOIDUNG)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYLAPHOADON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRANGTHAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNGUOIDUNG)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDHOADON }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDHOADON }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDHOADON })
+        </td>
+    </tr>
+}
+
+</table>

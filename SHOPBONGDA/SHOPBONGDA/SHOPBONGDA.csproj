@@ -157,12 +157,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NguoidungController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -393,6 +397,9 @@
     <Content Include="Areas\Admin\Views\SanPham\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SanPham\Edit.cshtml" />
     <Content Include="Assets\Client\images\Thumbs.db" />
+    <Content Include="Areas\Admin\Views\Nguoidung\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidung\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDon\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -420,11 +427,13 @@
     <Content Include="Views\TrangChu\ChiTietSanPham.cshtml" />
     <Content Include="Views\TrangChu\DanhSachSanPhamLoai.cshtml" />
     <Content Include="Views\Shared\tesst.cshtml" />
+    <Content Include="Views\TaiKhoan\Create.cshtml" />
+    <Content Include="Views\TaiKhoan\Login.cshtml" />
+    <Content Include="Views\TaiKhoan\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

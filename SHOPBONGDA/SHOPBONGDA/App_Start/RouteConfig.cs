@@ -14,6 +14,13 @@ namespace SHOPBONGDA
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "TaiKhoan",
+                url: "TaiKhoan/{action}/{id}",
+                defaults: new { controller = "TaiKhoan", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "SHOPBONGDA.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "TrangChu", action = "Index", id = UrlParameter.Optional },

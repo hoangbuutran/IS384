@@ -4,7 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
+@{
+    var session = (SHOPBONGDA.Models.LoginModel)Session["USER_SESSION"];
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,10 +40,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="clearfix"> </div>
                 </div>
                 <div class="header-bottom-right">
-                    <div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
+                    @if (session != null)
+                    {
+                        <div class="account"><a href="/TaiKhoan/Details/@session.id"><span> </span>Xin chao: @session.tendangnhap</a></div>
+                    }
+                    else
+                    {
+                        <div class="account"><a href="#"><span> </span>Bạn chưa đăng nhập.</a></div>
+                    }
+                    
                     <ul class="login">
-                        <li><a href="login.html"><span> </span>LOGIN</a></li> |
-                        <li><a href="register.html">SIGNUP</a></li>
+                        <li><a href="/TaiKhoan/Login"><span> </span>LOGIN</a></li> |
+                        <li><a href="/TaiKhoan/Create">SIGNUP</a></li>
                     </ul>
                     <div class="cart"><a href="#"><span> </span>CART</a></div>
                     <div class="clearfix"> </div>
