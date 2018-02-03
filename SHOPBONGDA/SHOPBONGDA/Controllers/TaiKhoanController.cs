@@ -26,7 +26,7 @@ namespace SHOPBONGDA.Controllers
                 nguoidungsession.tendangnhap = nguoidung.TENNGUOIDUNG;
                 nguoidungsession.id = nguoidung.IDNGUOIDUNG;
                 Session.Add("USER_SESSION", nguoidungsession);
-                return RedirectToAction("Index","TrangChu");
+                return RedirectToAction("Index", "TrangChu");
             }
             return View();
         }
@@ -50,6 +50,8 @@ namespace SHOPBONGDA.Controllers
         {
             try
             {
+                nguoidung.TRANGTHAI = true;
+                nguoidung.IDLOAINGUOIDUNG = 2;
                 var dao = new NguoiDungDao();
                 if (dao.AddNguoiDung(nguoidung) != 0)
                 {
@@ -75,18 +77,27 @@ namespace SHOPBONGDA.Controllers
 
         // POST: TaiKhoan/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(NGUOIDUNG nguoidung, FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                nguoidung.TRANGTHAI = true;
+                nguoidung.IDLOAINGUOIDUNG = 2;
+                var dao = new NguoiDungDao();
+                if (dao.EditNguoiDung(nguoidung) != 0)
+                {
+                    return RedirectToAction("Details", "TaiKhoan");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "loi");
+                }
             }
             catch
             {
                 return View();
             }
+            return View();
         }
 
 

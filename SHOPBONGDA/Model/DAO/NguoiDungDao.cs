@@ -81,5 +81,27 @@ namespace Model.DAO
             }
             return i;
         }
+        public int KhoaNguoiDung(int id)
+        {
+            int i = 0;
+            try
+            {
+                var nguoidungcu = db.NGUOIDUNGs.Find(id);
+                nguoidungcu.TENNGUOIDUNG = nguoidungcu.TENNGUOIDUNG;
+                nguoidungcu.MATKHAU = nguoidungcu.MATKHAU;
+                nguoidungcu.SDT = nguoidungcu.SDT;
+                nguoidungcu.IDLOAINGUOIDUNG = nguoidungcu.IDLOAINGUOIDUNG;
+                nguoidungcu.EMAIL = nguoidungcu.EMAIL;
+                nguoidungcu.TRANGTHAI = false;
+                db.SaveChanges();
+                i = 1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return i;
+        }
     }
 }

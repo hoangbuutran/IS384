@@ -15,6 +15,16 @@ namespace SHOPBONGDA.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
+                "HoaDonController",
+                "Admin/HoaDon/{action}/{id}",
+                new { action = "Index", controller = "HoaDon", id = UrlParameter.Optional }
+            );
+            context.MapRoute(
+                "NguoidungController",
+                "Admin/Nguoidung/{action}/{id}",
+                new { action = "Index", controller = "Nguoidung", id = UrlParameter.Optional }
+            );
+            context.MapRoute(
                 "SanPhamController",
                 "Admin/SanPham/{action}/{id}",
                 new { action = "Index", controller = "SanPham", id = UrlParameter.Optional }

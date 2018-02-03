@@ -5,12 +5,12 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Quản Lý Hóa Đơn</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NGAYLAPHOADON)
@@ -33,7 +33,7 @@
             @Html.DisplayFor(modelItem => item.TRANGTHAI)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IDNGUOIDUNG)
+            @Html.DisplayFor(modelItem => item.NGUOIDUNG.TENNGUOIDUNG)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IDHOADON }) |

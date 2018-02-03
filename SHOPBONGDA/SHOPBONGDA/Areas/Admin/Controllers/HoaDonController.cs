@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace SHOPBONGDA.Areas.Admin.Controllers
         // GET: Admin/HoaDon
         public ActionResult Index()
         {
-            return View();
+            var dao = new HoaDonDao();
+            return View(dao.ListHoaDon());
         }
     }
 }

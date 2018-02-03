@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,30 +12,15 @@ namespace SHOPBONGDA.Areas.Admin.Controllers
         // GET: Admin/Nguoidung
         public ActionResult Index()
         {
-            return View();
+            var dao = new NguoiDungDao();
+            return View(dao.ListNguoiDung());
         }
 
-        
-        // GET: Admin/Nguoidung/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Admin/Nguoidung/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            var dao = new NguoiDungDao().NguoiDungSingleWithID(id);
+            return View();
         }
 
         

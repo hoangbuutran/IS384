@@ -5,63 +5,96 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="http://placehold.it/380x500" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                            @Model.TENNGUOIDUNG
+                        </h4>
 
-<div>
-    <h4>NGUOIDUNG</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENNGUOIDUNG)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TENNGUOIDUNG)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MATKHAU)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MATKHAU)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EMAIL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TRANGTHAI)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TRANGTHAI)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IDLOAINGUOIDUNG)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDLOAINGUOIDUNG)
-        </dd>
-
-    </dl>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope"></i>@Model.EMAIL
+                            <br />
+                            <br />
+                            <i class="glyphicon glyphicon-gift"></i>@Model.SDT
+                        </p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">
+                                <a href="/TaiKhoan/Edit/@Model.IDNGUOIDUNG"> Sửa Thông Tin</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDNGUOIDUNG }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+@*<h2>Details</h2>
+
+    <div>
+        <h4>NGUOIDUNG</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TENNGUOIDUNG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TENNGUOIDUNG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MATKHAU)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MATKHAU)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SDT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SDT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EMAIL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TRANGTHAI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TRANGTHAI)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDLOAINGUOIDUNG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDLOAINGUOIDUNG)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IDNGUOIDUNG }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

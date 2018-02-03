@@ -338,6 +338,8 @@
     <Content Include="image\ao_dau_barcelona_2017_2018.jpg" />
     <Content Include="image\ao_dau_Barcelona_xanh_ngoc.jpg" />
     <Content Include="image\ao_thu_mon-mau_hong.jpg" />
+    <Content Include="image\logo384.png" />
+    <Content Include="image\Screenshot_1.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -398,7 +400,6 @@
     <Content Include="Areas\Admin\Views\SanPham\Edit.cshtml" />
     <Content Include="Assets\Client\images\Thumbs.db" />
     <Content Include="Areas\Admin\Views\Nguoidung\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Nguoidung\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDon\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -430,6 +431,7 @@
     <Content Include="Views\TaiKhoan\Create.cshtml" />
     <Content Include="Views\TaiKhoan\Login.cshtml" />
     <Content Include="Views\TaiKhoan\Details.cshtml" />
+    <Content Include="Views\TaiKhoan\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

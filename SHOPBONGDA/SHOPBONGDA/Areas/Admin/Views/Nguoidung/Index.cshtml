@@ -5,31 +5,21 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Quản Lý Người Dùng</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<table class="table table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TENNGUOIDUNG)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MATKHAU)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.SDT)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EMAIL)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TRANGTHAI)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IDLOAINGUOIDUNG)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -38,9 +28,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.TENNGUOIDUNG)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MATKHAU)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.SDT)
         </td>
@@ -48,15 +36,11 @@
             @Html.DisplayFor(modelItem => item.EMAIL)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TRANGTHAI)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDLOAINGUOIDUNG)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDNGUOIDUNG }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDNGUOIDUNG }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDNGUOIDUNG })
+            <button class="btn-circle">
+                @Html.ActionLink("Khóa", "Edit", new { id = item.IDNGUOIDUNG })
+            </button> 
+            
+            
         </td>
     </tr>
 }

@@ -6,6 +6,7 @@
     var sanpham = (List<Model.EF.SANPHAM>)ViewBag.DsSanPham;
     var i = 1;
 }
+
 <div class="shoes-grid">
     <a href="single.html">
         <div class="wrap-in">
@@ -76,8 +77,8 @@
 @foreach (var item in Model)
 {
     <div class="products">
-        <h5 class="latest-product">@item.TENLOAISANPHAM</h5>
-        <a class="view-all" href="#">VIEW ALL<span> </span></a>
+        <a href="/TrangChu/DanhSachSanPhamLoai/@item.IDLOAISANPHAM"><h5 class="latest-product">@item.TENLOAISANPHAM</h5></a> 
+        <a class="view-all" href="/TrangChu/DanhSachSanPhamLoai/@item.IDLOAISANPHAM">VIEW ALL<span> </span></a>
     </div>
     <div class="product-left">
         @foreach (var itemsanpham in sanpham.Where(x => x.IDLOAISANPHAM == item.IDLOAISANPHAM))
