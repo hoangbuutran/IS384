@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace SHOPBONGDA.Areas.Admin.Controllers
 {
-    public class SanPhamController : Controller
+    public class SanPhamController : RangBuocController
     {
 
         SanPhamDao daoSanPham = null;
@@ -90,9 +90,6 @@ namespace SHOPBONGDA.Areas.Admin.Controllers
             return View();
         }
 
-        
-        // POST: Admin/SanPham/Delete/5
-        [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
             daoSanPham.DeleteSanPham(id);

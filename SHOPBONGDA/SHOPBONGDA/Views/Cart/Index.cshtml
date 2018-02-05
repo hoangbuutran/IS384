@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var hang = (List<SHOPBONGDA.Models.CartItem>)Session["CartSession"];
+    var nguoidung = (SHOPBONGDA.Models.LoginModel)Session["USER_SESSION"];
 }
 <style>
     table#banggiohang {
@@ -38,8 +39,9 @@
 
         </div>
     </div>
-    <div class="button">
-        <a href="#">Dat Hang</a>
+    
+    <div class="btn">
+        <a href="/Cart/DatHang" >Dat Hang</a>
     </div>
 
 }

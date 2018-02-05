@@ -45,7 +45,7 @@ namespace SHOPBONGDA.Controllers
                 else
                 {
                     var item = new CartItem();
-                    item.SanPham  = sanpham;
+                    item.SanPham = sanpham;
                     item.SoLuong = soluong;
                     list.Add(item);
                 }
@@ -66,11 +66,24 @@ namespace SHOPBONGDA.Controllers
         }
         public ActionResult DatHang()
         {
-            var list = new List<CartItem>();
+            var list = (List<CartItem>)Session[CartSession];
             var nguoidung = (LoginModel)Session["USER_SESSION"];
-            var hoadon = new HoaDonDao().ThemHoaDon(nguoidung.id);
-            //var cthoadon = new CTHOADON()
-            return View(list);
+            if (nguoidung != null)
+            {
+                var hoadon = new HoaDonDao().ThemHoaDon(nguoidung.id);
+                var cthoadon = new HoaDonDao();
+                foreach (var item in list)
+                {
+                    var gia = item.SanPham.GIA * item.SoLuong;
+                    cthoadon.ThemCTHoaDon(hoadon.IDHOADON, item.SanPham.IDSANPHAM, item.SoLuong, (int)gia);
+                }
+                return RedirectToAction("Index", "TrangChu");
+            }
+            else
+            {
+                return RedirectToAction("Index", "TrangChu");
+            }
+            return View();
         }
     }
 }

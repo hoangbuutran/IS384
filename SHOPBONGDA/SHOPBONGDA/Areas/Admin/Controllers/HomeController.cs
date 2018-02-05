@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace SHOPBONGDA.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : RangBuocController
     {
         // GET: Admin/Home
         public ActionResult Index()

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace SHOPBONGDA.Areas.Admin.Controllers
 {
-    public class NguoidungController : Controller
+    public class NguoidungController : RangBuocController
     {
         // GET: Admin/Nguoidung
         public ActionResult Index()
@@ -19,7 +19,7 @@ namespace SHOPBONGDA.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            var dao = new NguoiDungDao().NguoiDungSingleWithID(id);
+            var dao = new NguoiDungDao().KhoaNguoiDung(id);
             return View();
         }
 

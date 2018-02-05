@@ -21,7 +21,7 @@ namespace Model.DAO
             return db.HOADONs.Where(x => x.IDHOADON == id).SingleOrDefault();
         }
 
-        public int ThemHoaDon(int id)
+        public HOADON ThemHoaDon(int id)
         {
             var hoadon = new HOADON();
             hoadon.NGAYLAPHOADON = DateTime.Now;
@@ -29,12 +29,18 @@ namespace Model.DAO
             hoadon.IDNGUOIDUNG = id;
             db.HOADONs.Add(hoadon);
             db.SaveChanges();
-            return hoadon.IDHOADON;
+            return hoadon;
         }
-        //public int ThemCTHoaDon(int idhoadon, )
-        //{
-
-        //    return 0;
-        //}
+        public int ThemCTHoaDon(int idhoadon, int idsanpham, int soluong, int gia)
+        {
+            var cthoadon = new CTHOADON();
+            cthoadon.IDHOADON = idhoadon;
+            cthoadon.IDSANPHAM = idsanpham;
+            cthoadon.SOLUONG = soluong;
+            cthoadon.GIA = gia;
+            db.CTHOADONs.Add(cthoadon);
+            db.SaveChanges();
+            return 0;
+        }
     }
 }
