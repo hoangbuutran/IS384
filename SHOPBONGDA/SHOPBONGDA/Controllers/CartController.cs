@@ -1,4 +1,5 @@
 ﻿using Model.DAO;
+using Model.EF;
 using SHOPBONGDA.Models;
 using System;
 using System.Collections.Generic;
@@ -62,6 +63,14 @@ namespace SHOPBONGDA.Controllers
                 Session[CartSession] = list;
             }
             return RedirectToAction("Index");
+        }
+        public ActionResult DatHang()
+        {
+            var list = new List<CartItem>();
+            var nguoidung = (LoginModel)Session["USER_SESSION"];
+            var hoadon = new HoaDonDao().ThemHoaDon(nguoidung.id);
+            //var cthoadon = new CTHOADON()
+            return View(list);
         }
     }
 }

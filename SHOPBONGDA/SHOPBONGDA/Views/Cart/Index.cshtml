@@ -2,36 +2,58 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var hang = (List<SHOPBONGDA.Models.CartItem>)Session["CartSession"];
 }
 <style>
     table#banggiohang {
-    margin-top: 30px;
-}
+        margin-top: 30px;
+    }
 </style>
-<div class="table">
-    <div class="col-md-8">
-        <table class="table-bordered table" id="banggiohang">
-            <thead>
-                <tr>
-                    <td>Tên sản phẩm</td>
-                    <td>Số lượng</td>
-                    <td>Giá</td>
-                    <td>Thành tiền</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+@if (hang != null)
+{
+    <div class="table">
+        <div class="col-md-8">
+            <table class="table-bordered table" id="banggiohang">
+                <thead>
                     <tr>
-                        <td>@item.SanPham.TENSANPHAM</td>
-                        <td>@item.SoLuong</td>
-                        <td>@item.SanPham.GIA</td>
-                        <td>@(item.SanPham.GIA * item.SoLuong)</td>
+                        <td>Tên sản phẩm</td>
+                        <td>Số lượng</td>
+                        <td>Giá</td>
+                        <td>Thành tiền</td>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.SanPham.TENSANPHAM</td>
+                            <td>@item.SoLuong</td>
+                            <td>@item.SanPham.GIA</td>
+                            <td>@(item.SanPham.GIA * item.SoLuong)</td>
+                        </tr>
+                    }
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
+        </div>
     </div>
-</div>
+    <div class="button">
+        <a href="#">Dat Hang</a>
+    </div>
+
+}
+else
+{
+    <style>
+        .alert-danger.alert.col-md-6 {
+            margin-top: 28px;
+        }
+    </style>
+    <div class="alert-danger alert col-md-6" style="text-align:center">
+        CHƯA CÓ SẢN PHẨM TRONG GIỎ
+        <br />
+        <a href="/TrangChu/Index">Tới trang mua sản phẩm</a>
+    </div>
+
+}

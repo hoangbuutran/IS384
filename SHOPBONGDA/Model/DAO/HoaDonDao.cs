@@ -20,5 +20,21 @@ namespace Model.DAO
         {
             return db.HOADONs.Where(x => x.IDHOADON == id).SingleOrDefault();
         }
+
+        public int ThemHoaDon(int id)
+        {
+            var hoadon = new HOADON();
+            hoadon.NGAYLAPHOADON = DateTime.Now;
+            hoadon.TRANGTHAI = true;
+            hoadon.IDNGUOIDUNG = id;
+            db.HOADONs.Add(hoadon);
+            db.SaveChanges();
+            return hoadon.IDHOADON;
+        }
+        //public int ThemCTHoaDon(int idhoadon, )
+        //{
+
+        //    return 0;
+        //}
     }
 }
