@@ -23,7 +23,7 @@ namespace SHOPBONGDA.Controllers
             ViewBag.DsSanPham = daoSanPham.ListSanPham();
             return View(daoLoaiSanPham.ListSanPham());
         }
-//ergergergergergergerg
+//ergergergergergergerg///////////////////////
         [ChildActionOnly]
         public ActionResult MenuLeft()
         {
